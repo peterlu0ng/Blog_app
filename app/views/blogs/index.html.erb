@@ -1,4 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Peter's Blogs</h1>
+<h1>Blogs Listing Page</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blogs.each do |blog|%>
+      <tr>
+        <td><%= blog.title%></td>
+        <td><%= blog.body%></td>
+        <td>Placeholder</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
