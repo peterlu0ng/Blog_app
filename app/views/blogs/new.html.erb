@@ -1,6 +1,6 @@
 <h1>Create a new blog</h1>
 
-<%= form_with scope: :blog, url: blogs_path, local: true do |f| %>
+<%= form_with scope: :blog, url: blogs_path, local: true, data: {turbo: false} do |f| %>
 
     <p>
         <%= f.label :title%><br/>
