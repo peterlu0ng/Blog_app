@@ -20,6 +20,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save #validation occurs if this fails
+      flash[:notice] = "Blog was created successfully."
         redirect_to @blog
     else
       render :new, status: :unprocessable_entity
