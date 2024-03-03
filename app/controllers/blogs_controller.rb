@@ -45,8 +45,9 @@ class BlogsController < ApplicationController
 
   # DELETE /blogs/1 or /blogs/1.json
   def destroy
+    @blog = Blog.find(params[:id])
     @blog.destroy!
-
+    redirect_to blog_path
   end
 
   private

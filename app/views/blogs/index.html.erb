@@ -15,7 +15,8 @@
       <tr>
         <td><%= blog.title%></td>
         <td><%= blog.body%></td>
-        <td>Placeholder</td>
+        <td><%= link_to "Show", blog_path(blog) %></td>
+        <td><%= link_to "Delete", blog_path(blog), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?" }  %></td>
       </tr>
     <% end %>
   </tbody>
