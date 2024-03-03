@@ -15,6 +15,10 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+
 
   # POST /blogs or /blogs.json
   def create
@@ -29,7 +33,14 @@ class BlogsController < ApplicationController
 
   # PATCH/PUT /blogs/1 or /blogs/1.json
   def update
-
+    # binding.break
+    @blog = Blog.find(params[:id])
+    if @blog.update(params.require(:blog).permit(:title, :body))
+      flash[:notice] = "Blog updated succesfully"
+      redirect_to @blog
+    else
+      render "edit"
+    end
   end
 
   # DELETE /blogs/1 or /blogs/1.json
