@@ -1,29 +1,6 @@
 <h1>Create a new blog</h1>
 
-<% if @blog.errors.any?%>
-    <h2>The following errors prevented the articles from being saved</h2>
-    <ul>
-        <% @blog.errors.full_messages.each do |msg|%>
-            <li><%= msg %></li>
-        <%end%>
-     </ul>
-    <%end%>
+<%= render "form"%>
 
-<%= form_with scope: :blog, url: blogs_path, local: true, data: {turbo: false} do |f| %>
-
-    <p>
-        <%= f.label :title%><br/>
-        <%= f.text_field :title %>
-    </p>
-
-    <p>
-        <%= f.label :body%><br/>
-        <%= f.text_area :body %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
-
-<% end %> 
 
 <p><%= link_to "Return to blogs listing", blogs_path%></p>
