@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs or /blogs.json
   def index
@@ -7,7 +8,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1 or /blogs/1.json
   def show
-    @blog = Blog.find(params[:id])
+
   end
 
   # GET /blogs/new
@@ -16,7 +17,7 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(params[:id])
+
   end
 
 
@@ -34,8 +35,8 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1 or /blogs/1.json
   def update
     # binding.break
-    @blog = Blog.find(params[:id])
-    if @blog.update(params.require(:blog).permit(:title, :body))
+
+    if @blog.update(blog_params)
       flash[:notice] = "Blog updated succesfully"
       redirect_to @blog
     else
@@ -45,7 +46,7 @@ class BlogsController < ApplicationController
 
   # DELETE /blogs/1 or /blogs/1.json
   def destroy
-    @blog = Blog.find(params[:id])
+
     @blog.destroy!
     redirect_to blogs_path
   end
