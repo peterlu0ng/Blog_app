@@ -2,3 +2,7 @@
 
 <p><strong>Title: <%= @blog.title %></strong></p>
 <p><strong>Body:<%= @blog.body %> </strong></p>
+
+<%= link_to "Edit", edit_blog_path(@blog)%> | 
+<%= link_to "Delete", blog_path(@blog), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?" }%> | 
+<%= link_to "Return to blogs listing", blogs_path%>
