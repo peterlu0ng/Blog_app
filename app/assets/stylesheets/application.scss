@@ -1,1 +1,37 @@
 @import "bootstrap";
+
+.navbar {
+    background-color: black !important;
+}
+
+.nav-link{
+    color: white !important
+}
+
+#logo{
+    color: white !important
+}
+#home-container{
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100vh !important
+}
+.jumbotron{
+    margin-top: 20px;
+    height: 500px;
+    color: white !important;
+}   
+#full-image{
+    background-image: asset-url("jumbo-image.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-outline-success{
+    color: #0d6efd !important;
+    border-color: #0d6efd !important
+    
+
+}
