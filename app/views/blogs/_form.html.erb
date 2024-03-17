@@ -9,25 +9,25 @@
         <%end%>
     <div class= "row justify-content-center">
         <div class="col-10">
-    <%= form_with(model: @blog, data: {turbo: false}, local: true, ) do |f| %>
-        <div class="form-group row">
-            <%= f.label :title, class: "col-2 col-form-label"%>
+        <%= form_with(model: @blog, class: "shadow p-3 mb-3 bg-white rounded", data: {turbo: false}, local: true, ) do |f| %>
+            <div class="form-group row">
+            <%= f.label :title, class: "col-2 mb-3 col-form-label"%>
             <div class= "col-10">
-                <%= f.text_field :title, class: "form-control" %>
+            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of blog" %>
             </div>
         </div>
 
         <div class="form-group row">
             <%= f.label :body, class: "col-2 col-form-label"%>
-                    <div class= "col-10">
-            <%= f.text_area :body, rows:10, class: "form-control" %>
+             <div class= "col-10">
+            <%= f.text_area :body, rows:10, class: "form-control shadow rounded mb-3", placeholder: "Description of blog" %>
+            </div>
         </div>
-        </div>
-        <div class="form-group row">
+        <div class="justify-content-center">
             <%= f.submit class: "btn btn-outline-dark"%>
             </div>
 
-    <%= link_to "Cancel and return to blogs listing", blogs_path%>
+    <%= link_to "[ Cancel and return to blogs listing ]", blogs_path%>
     <% end %> 
         </div>
         </div>
