@@ -16,27 +16,32 @@
     padding-right: 0px;
     height: 100vh !important
 }
+
 .jumbotron{
-    margin-top: 20px;
     height: 500px;
     color: white !important;
 }   
-#full-image{
-    background-image: asset-url("jumbo-image.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+#show{
+    color: white;
 }
 
 .btn-outline-success{
     color: #0d6efd !important;
     border-color: #0d6efd !important
 }
-.background{
-    flex: 1 0 auto;
-    background-color: #EEEEEE
+
+#page-content{
+    background-image: asset-url("jumbo-image.jpg") !important;
+    background-color: #EEEEEE;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100% !important
+
 }
+
 a {
     color: inherit;
     text-decoration: none;
