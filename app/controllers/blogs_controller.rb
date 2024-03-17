@@ -24,6 +24,7 @@ class BlogsController < ApplicationController
   # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.user = User.first
     if @blog.save #validation occurs if this fails
       flash[:notice] = "Blog was created successfully."
         redirect_to @blog
