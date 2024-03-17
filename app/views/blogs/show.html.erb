@@ -1,8 +1,22 @@
-<h1>Showing blog details </h1>
+<div class="background">
+  <h2 class ="text-center"><%= @blog.title %></h2>
 
-<p><strong>Title: <%= @blog.title %></strong></p>
-<p><strong>Body:<%= @blog.body %> </strong></p>
-
-<%= link_to "Edit", edit_blog_path(@blog)%> | 
-<%= link_to "Delete", blog_path(@blog), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?" }%> | 
-<%= link_to "Return to blogs listing", blogs_path%>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow-none mb-5 bg-light rounded">
+          <div class="card-header font-italic">
+            By Peter
+          </div>
+            <div class="card-body">
+              <div class="card-text text-start"><%= simple_format(@blog.body) %></div>
+              <button type="button" class="btn btn-outline-dark"><%= link_to "Edit", edit_blog_path(@blog)  %></button>
+              <button type="button" class="btn btn-outline-danger"><%= link_to "Delete", blog_path(@blog), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?" } %>  </button>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <small>Created <%= time_ago_in_words(@blog.created_at)%> ago,
+                edited <%=time_ago_in_words(@blog.updated_at)%> ago</small>
+            </div>
+          </div>
+        </div>
+      
