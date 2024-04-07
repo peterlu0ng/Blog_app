@@ -1,0 +1,6 @@
+  <h1 id= "show" class ="text-center"><%= @user.username%>'s profile' </h1>
+<%= gravatar_for @user, size: 200%>
+
+  <h3 id= "show" class ="text-center">Blogs</h3>
+
+<%= render 'blogs/blog'%>

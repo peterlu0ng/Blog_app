@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
 .navbar {
     background-color: black !important;
 }
@@ -38,7 +44,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100% !important
+    height: 100vh !important
 
 }
 
@@ -47,3 +53,5 @@ a {
     text-decoration: none;
     
   }
+
+  
