@@ -25,7 +25,7 @@
         </div>
 
         <div class="text-center">
-            <%= f.submit "Sign Up!", class: "btn btn-outline-dark"%>
+            <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-dark") %>
             </div>
 
     <%= link_to "[ Cancel and return to blogs listing ]", blogs_path%>
