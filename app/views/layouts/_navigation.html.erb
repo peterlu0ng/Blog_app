@@ -10,11 +10,11 @@
                 <%= link_to "Blogs", blogs_path, class:"nav-link"%>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <%= link_to "Bloggers", users_path, class:"nav-link"%>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Blogs
+                    Actions
                 </a>
                 <ul class="dropdown-menu">
                     <%= link_to "Create new blog", new_blog_path, class: "dropdown-item"%></a>
