@@ -16,7 +16,9 @@
               <h5 class="card-title"><%= link_to gravatar_for(user, size: 150), user_path(user)%></h5>
               <p class="card-text"><%= pluralize(user.blogs.count, "blog") %></p>
               <button type="button" class="btn btn-outline-dark"><%= link_to "Show profile", user%></button>
+              <% if logged_in? && user == current_user %>
               <button type="button" class="btn btn-outline-dark"><%= link_to "Edit profile", edit_user_path(user)  %></button>
+              <% end %>
             </div>
             <div class="card-footer text-body-secondary">
               <small>Joined <%= time_ago_in_words(user.created_at)%> ago</small>

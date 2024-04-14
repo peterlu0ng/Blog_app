@@ -9,8 +9,10 @@
           </div>
             <div class="card-body">
               <div class="card-text text-start"><%= simple_format(@blog.body) %></div>
+              <% if logged_in? && @blog.user == current_user %>
               <button type="button" class="btn btn-outline-dark"><%= link_to "Edit", edit_blog_path(@blog)  %></button>
               <button type="button" class="btn btn-outline-danger"><%= link_to "Delete", blog_path(@blog), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?" } %>  </button>
+              <% end %>
             </div>
             <div class="card-footer text-body-secondary">
               <small>Created <%= time_ago_in_words(@blog.created_at)%> ago,
