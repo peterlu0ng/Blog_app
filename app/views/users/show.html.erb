@@ -6,4 +6,8 @@
  </div>
   <h3 id= "show" class ="text-center">Blogs</h3>
 
+  <div class="flickr_pagination">
+    <%= will_paginate @blogs, :container => false %>
+  </div>
+
 <%= render 'blogs/blog'%>

@@ -1,8 +1,11 @@
   <h1 id= "show" class ="text-center"> Alpha Bloggers </h1>
 
+<div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
 
 <div class="container">
-    <% @user.each do |user|%>
+    <% @users.each do |user|%>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-4">
         <div class="card text-center shadow-none mb-5 bg-light rounded">
@@ -22,3 +25,7 @@
         </div>
     <% end %>
 </div>
+
+<div class="flickr_pagination-mb-4">
+    <%= will_paginate @blogs, :container => false %>
+  </div>
