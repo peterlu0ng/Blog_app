@@ -1,6 +1,9 @@
-  <h1 id= "show" class ="text-center"><%= @user.username%>'s profile' </h1>
+  <h1 id= "show" class ="text-center"><%= @user.username%>'s profile </h1>
 <%= gravatar_for @user, size: 200%>
 
+<div class="text-center">
+  <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-dark"%>
+ </div>
   <h3 id= "show" class ="text-center">Blogs</h3>
 
 <%= render 'blogs/blog'%>

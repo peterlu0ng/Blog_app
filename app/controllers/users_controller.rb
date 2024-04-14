@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "Your account information was updated successfully"
-      redirect_to blogs_path
+      redirect_to user_path
     else
       render 'edit'
     end
