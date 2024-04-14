@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [ :show, :edit, :update, :destroy ]
+  before_action :require_user, except: [ :show, :index ]
+  before_action :require_same_user, only: [ :edit, :update, :destroy ]
 
   # GET /blogs or /blogs.json
   def index
@@ -63,5 +65,11 @@ class BlogsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def blog_params
       params.require(:blog).permit(:title, :body)
+    end
+    def require_same_user
+      if current_user != @blog.user
+        flash[:alert] = "You can only edit or delete your own blog"
+        redirect_to @blog
+      end
     end
 end
