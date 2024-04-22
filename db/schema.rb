@@ -10,9 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_21_070208) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_22_020617) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_categories", force: :cascade do |t|
+    t.integer "blog_id"
+    t.integer "category_id"
+  end
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
