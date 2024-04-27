@@ -9,6 +9,7 @@
         <div class="card text-center shadow-none mb-5 bg-light rounded">
             <div class="card-body">
               <h5 class="card-title"><%= link_to category.name, category_path(category)%></h5>
+            <p class="card-text"><%= pluralize(category.blogs.count, "blog") %></p>
             </div>
             <div class="card-footer text-body-secondary">
               <small>Created <%= time_ago_in_words(category.created_at)%> ago,
