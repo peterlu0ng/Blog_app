@@ -20,6 +20,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @blogs = @category.blogs.paginate(page: params[:page], per_page: 3)
   end
 
   private

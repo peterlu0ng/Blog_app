@@ -1,1 +1,14 @@
 <h1 id= "show" class ="text-center"><%= @category.name %> </h1>
+
+<div class="text-center">
+  <% if logged_in? && @user == current_user.admin?%>
+  <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-dark"%>
+  <% end %>
+ </div>
+  <h3 id= "show" class ="text-center">Blogs</h3>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @blogs, :container => false %>
+  </div>
+
+<%= render 'blogs/blog'%>
