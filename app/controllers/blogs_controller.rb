@@ -64,7 +64,7 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, category_ids: [])
     end
     def require_same_user
       if current_user != @blog.user
